@@ -5,6 +5,12 @@ import static java.util.stream.Collectors.toList;
 
 public class StreamIteration {
     public void printOperationExecution() {
+        // Demonstrates how iteration happens in a Stream pipeline.
+        // The number of iterations depends ONLY on the number of elements
+        // in the collection; it does not depend on the number of operations
+        // in the pipeline.
+        // A nice visual representation can be found:
+        // http://www.logicbig.com/tutorials/core-java-tutorial/java-util-stream/lazy-evaluation/
         List result = IntStream.range(1, 10)
                 .peek(value -> System.out.println("START: " + value))
                 .filter(value -> greaterThan3(value))
